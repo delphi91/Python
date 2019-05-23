@@ -37,6 +37,32 @@ def evenOddrandom():
     print('Even numbers:', sorted(even), 'Count: ', even.__len__())
     print('Odd numbers:', sorted(odd), 'Count: ', odd.__len__())
 
+def evenOdd():
+    data = []
+    for i in random.sample(range(0,100),21):
+        data.append(i)
+    odd = []
+    even = []
+    for n in data:
+        if n % 2:
+            odd.append(n)
+        else:
+            even.append(n)
+    print(f'Primary table: {data}')
+    print(f'Odd numbers: {odd}')
+    print(f'Even number {even}')
+
+def isOdd(x):
+    return x %2
+
 evenOddList()
 print('\n-------------------------------------------------------\n')
 evenOddrandom()
+print('\n-------------------------------------------------------\n')
+data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+print('Static list: ',data)
+data = filter(isOdd, data)
+data = list(data)
+print('Odd numbers: ',data)
+print('\n-------------------------------------------------------\n')
+evenOdd()
